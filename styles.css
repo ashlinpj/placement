@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&family=Fira+Code:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a1a;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    width: 100vw;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    pointer-events: none;
+}
+
+.hero-title {
+    font-size: clamp(1.8rem, 5vw, 4rem);
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    text-shadow: 0 0 40px rgba(0, 200, 255, 0.4);
+    animation: fadeInUp 1.5s ease-out;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-title span.highlight {
+    background: linear-gradient(135deg, #00c8ff, #7b2fff, #ff2daa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    margin-top: 30px;
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    animation: fadeInUp 1.8s ease-out, pulse 3s ease-in-out 2s infinite;
+}
+
+.badge {
+    margin-top: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 30px;
+    border: 1px solid rgba(123, 47, 255, 0.4);
+    border-radius: 50px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    background: rgba(123, 47, 255, 0.08);
+    animation: fadeInUp 2.2s ease-out;
+}
+
+.badge .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #7b2fff;
+    animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; text-shadow: 0 0 20px rgba(0, 200, 255, 0.3); }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; box-shadow: 0 0 6px #7b2fff; }
+    50% { opacity: 0.3; box-shadow: none; }
+}
